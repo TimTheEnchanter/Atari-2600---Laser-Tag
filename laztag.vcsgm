@@ -1,0 +1,163 @@
+type: VCS Game Maker Project
+format-version: 1
+generation-time: 2025-08-17T21:18:30.590Z
+blockly-workspace: >-
+  <xml xmlns="https://developers.google.com/blockly/xml">
+    <block type="event_block" id="$G=~B7KjIjynqnnB+v*l" x="63" y="38">
+      <field name="EVENT">title_start</field>
+      <statement name="DO">
+        <block type="background_set_select" id="C/:w@Vx_3/%pd97j5A?0">
+          <field name="VAR">2</field>
+          <next>
+            <block type="sprite_player0_set" id="*z!tMqiJY73}Z,[[,kJG">
+              <field name="VAR">player0y</field>
+              <value name="VALUE">
+                <shadow type="math_number" id="e?9`AG{7.XY|_BC:O:jY">
+                  <field name="NUM">0</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="sprite_player1_set" id="qQ@sgy8rgY,cStL(5YWB">
+                  <field name="VAR">player1y</field>
+                  <value name="VALUE">
+                    <shadow type="math_number" id="u$SNZlOmkEJ_Nvybr39G">
+                      <field name="NUM">0</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+      <next>
+        <block type="event_block" id="UwP(VbzK9ejL=84XYxti">
+          <field name="EVENT">title_update</field>
+          <statement name="DO">
+            <block type="controls_if" id="MYZ|LZe_e.y#*`ePW/PF">
+              <value name="IF0">
+                <block type="input_joy0_get" id="p2lQ-$6tfrjTegGtMgkA">
+                  <field name="VAR">joy0fire</field>
+                </block>
+              </value>
+              <statement name="DO0">
+                <block type="event_change_state" id="I7}a!bWv=4N%JF9wFTY:">
+                  <field name="STATE">gameplay</field>
+                </block>
+              </statement>
+            </block>
+          </statement>
+          <next>
+            <block type="event_block" id="!S%{(]Z]Z8^z9;[@kjOG">
+              <field name="EVENT">gameplay_start</field>
+              <statement name="DO">
+                <block type="background_set_select" id="kyCvnSK%w}vbwo_QFfG)">
+                  <field name="VAR">1</field>
+                  <next>
+                    <block type="sprite_player0_set" id="^9-h[434c!6F,~K`PmH=">
+                      <field name="VAR">player0y</field>
+                      <value name="VALUE">
+                        <shadow type="math_number" id="2|9.f_On_ME+Yc3*M)d+">
+                          <field name="NUM">80</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="sprite_player1_set" id="e:kCLYHe?Z=dgV;]@.Q8">
+                          <field name="VAR">player1y</field>
+                          <value name="VALUE">
+                            <shadow type="math_number" id="WL++`gjAGYxOJrsfVQe/">
+                              <field name="NUM">20</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+              <next>
+                <block type="sprite_player0_change" id="duUKRHkD/N+oG$uH/aPk">
+                  <field name="VAR">player0x</field>
+                  <value name="DELTA">
+                    <shadow type="math_number" id="g41mnbcgtyP}zpk0rCW7">
+                      <field name="NUM">1</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="sprite_player1_change" id="@YDU(@)WcRfKY.h7DG4.">
+                      <field name="VAR">player1x</field>
+                      <value name="DELTA">
+                        <shadow type="math_number" id="q8lch|mtzi8Ama=s}_F$">
+                          <field name="NUM">255</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </xml>
+player-0: null
+player-1: null
+backgrounds:
+  backgrounds:
+    - id: 1
+      name: bkg 1
+      pixels: |-
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        X..............................X
+        X.....XXXXXXX......XXXXXXX.....X
+        X.....X..................X.....X
+        X..............................X
+        X..............................X
+        X..............................X
+        X.....X..................X.....X
+        X.....XXXXXXX......XXXXXXX.....X
+        X..............................X
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    - id: 2
+      name: start
+      pixels: |-
+        ................................
+        .....X......XX...XXXX...........
+        .....X.....X..X.....X...........
+        .....X.....X..X....X............
+        .....X.....XXXX...X.............
+        .....XXXX..X..X..XXXX...........
+        ................................
+        ......XXXXX..XX....XXX..........
+        ........X...X..X..X.............
+        ........X...X..X..X..X..........
+        ........X...XX.X...XXX..........
+    - id: 3
+      name: end player one
+      pixels: |-
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+    - id: 4
+      name: end player two
+      pixels: |-
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
+        ................................
