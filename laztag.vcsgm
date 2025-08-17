@@ -1,29 +1,39 @@
 type: VCS Game Maker Project
 format-version: 1
-generation-time: 2025-08-17T21:18:30.590Z
+generation-time: 2025-08-17T21:34:01.172Z
 blockly-workspace: >-
   <xml xmlns="https://developers.google.com/blockly/xml">
     <block type="event_block" id="$G=~B7KjIjynqnnB+v*l" x="63" y="38">
       <field name="EVENT">title_start</field>
       <statement name="DO">
-        <block type="background_set_select" id="C/:w@Vx_3/%pd97j5A?0">
-          <field name="VAR">2</field>
+        <block type="background_set_color" id="}BTI5UVX?=XM0%m$0LS4">
+          <field name="VAR">COLUBK</field>
+          <value name="VALUE">
+            <shadow type="math_number" id="peGRb?gQL=[rtN`A8lL/">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
           <next>
-            <block type="sprite_player0_set" id="*z!tMqiJY73}Z,[[,kJG">
-              <field name="VAR">player0y</field>
-              <value name="VALUE">
-                <shadow type="math_number" id="e?9`AG{7.XY|_BC:O:jY">
-                  <field name="NUM">0</field>
-                </shadow>
-              </value>
+            <block type="background_set_select" id="C/:w@Vx_3/%pd97j5A?0">
+              <field name="VAR">2</field>
               <next>
-                <block type="sprite_player1_set" id="qQ@sgy8rgY,cStL(5YWB">
-                  <field name="VAR">player1y</field>
+                <block type="sprite_player0_set" id="*z!tMqiJY73}Z,[[,kJG">
+                  <field name="VAR">player0y</field>
                   <value name="VALUE">
-                    <shadow type="math_number" id="u$SNZlOmkEJ_Nvybr39G">
+                    <shadow type="math_number" id="e?9`AG{7.XY|_BC:O:jY">
                       <field name="NUM">0</field>
                     </shadow>
                   </value>
+                  <next>
+                    <block type="sprite_player1_set" id="qQ@sgy8rgY,cStL(5YWB">
+                      <field name="VAR">player1y</field>
+                      <value name="VALUE">
+                        <shadow type="math_number" id="u$SNZlOmkEJ_Nvybr39G">
+                          <field name="NUM">0</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </next>
                 </block>
               </next>
             </block>
@@ -51,24 +61,38 @@ blockly-workspace: >-
             <block type="event_block" id="!S%{(]Z]Z8^z9;[@kjOG">
               <field name="EVENT">gameplay_start</field>
               <statement name="DO">
-                <block type="background_set_select" id="kyCvnSK%w}vbwo_QFfG)">
-                  <field name="VAR">1</field>
+                <block type="controls_if" id="6h#`8tZ4n=+}2+hG,Cn?">
+                  <value name="IF0">
+                    <block type="input_console_switch_get" id="=%%2|]FY`C]w10PqtYHP">
+                      <field name="SWITCH">switchselect</field>
+                    </block>
+                  </value>
+                  <statement name="DO0">
+                    <block type="background_set_select" id="+w~fEp0O*nqpldkRQu}2">
+                      <field name="VAR">1</field>
+                    </block>
+                  </statement>
                   <next>
-                    <block type="sprite_player0_set" id="^9-h[434c!6F,~K`PmH=">
-                      <field name="VAR">player0y</field>
-                      <value name="VALUE">
-                        <shadow type="math_number" id="2|9.f_On_ME+Yc3*M)d+">
-                          <field name="NUM">80</field>
-                        </shadow>
-                      </value>
+                    <block type="background_set_select" id="kyCvnSK%w}vbwo_QFfG)">
+                      <field name="VAR">1</field>
                       <next>
-                        <block type="sprite_player1_set" id="e:kCLYHe?Z=dgV;]@.Q8">
-                          <field name="VAR">player1y</field>
+                        <block type="sprite_player0_set" id="^9-h[434c!6F,~K`PmH=">
+                          <field name="VAR">player0y</field>
                           <value name="VALUE">
-                            <shadow type="math_number" id="WL++`gjAGYxOJrsfVQe/">
-                              <field name="NUM">20</field>
+                            <shadow type="math_number" id="2|9.f_On_ME+Yc3*M)d+">
+                              <field name="NUM">80</field>
                             </shadow>
                           </value>
+                          <next>
+                            <block type="sprite_player1_set" id="e:kCLYHe?Z=dgV;]@.Q8">
+                              <field name="VAR">player1y</field>
+                              <value name="VALUE">
+                                <shadow type="math_number" id="WL++`gjAGYxOJrsfVQe/">
+                                  <field name="NUM">20</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </next>
                         </block>
                       </next>
                     </block>
@@ -161,3 +185,17 @@ backgrounds:
         ................................
         ................................
         ................................
+    - id: 5
+      name: bkg 2
+      pixels: |-
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        X..............................X
+        X..XXXXX.......................X
+        X..X...X.......................X
+        X..XXXXX.......................X
+        X.........XXXXXXXXXXXX.........X
+        X.......................XXXXX..X
+        X.......................X...X..X
+        X.......................XXXXX..X
+        X..............................X
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
