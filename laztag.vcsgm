@@ -1,8 +1,444 @@
 type: VCS Game Maker Project
 format-version: 1
-generation-time: 2025-08-17T21:34:01.172Z
+generation-time: 2025-08-19T02:19:57.628Z
 blockly-workspace: >-
   <xml xmlns="https://developers.google.com/blockly/xml">
+    <variables>
+      <variable id="nri.fyFzTK~mHit{a38I">Player 0 X Speed</variable>
+      <variable id="hU}_MbQ_na-lzK{Fd/~_">player0_score</variable>
+      <variable id="e{s[s(+6qW.T(tS2;QjL">player1_score</variable>
+      <variable id="gre4U)RU_^j(Q#Fob*t@">Player 1 X Speed</variable>
+    </variables>
+    <block type="controls_if" id="#2c29r2mA8-Gq/e@v?ZY" x="538" y="-62">
+      <value name="IF0">
+        <block type="logic_operation" id="o_;DV$UoZ6.fu5-~)|7T">
+          <field name="OP">AND</field>
+          <value name="A">
+            <block type="variables_get" id="8|Xl3~8Y$z`(mllw!9Wm">
+              <field name="VAR" id="nri.fyFzTK~mHit{a38I">Player 0 X Speed</field>
+            </block>
+          </value>
+          <value name="B">
+            <block type="collision_get" id="Bw}fZb;PKQu#o6_%{X;F">
+              <field name="VAR0">player0</field>
+              <field name="VAR1">playfield</field>
+            </block>
+          </value>
+        </block>
+      </value>
+      <statement name="DO0">
+        <block type="variables_set" id="4M!KMGVc]O92FV](LH%X">
+          <field name="VAR" id="nri.fyFzTK~mHit{a38I">Player 0 X Speed</field>
+          <value name="VALUE">
+            <block type="math_single" id="HIK,f8nCI+{--Q?$4WLf">
+              <field name="OP">NEG</field>
+              <value name="NUM">
+                <block type="variables_get" id="%vv?mGX+Dfe!!NNlVSW+">
+                  <field name="VAR" id="nri.fyFzTK~mHit{a38I">Player 0 X Speed</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <next>
+            <block type="sprite_player0_change" id="m(}3%7|KH4fGYhJ7a{gV">
+              <field name="VAR">player0x</field>
+              <value name="DELTA">
+                <shadow xmlns="" type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+                <block type="variables_get" id="uULH.`2iEM.]7mb,f~O~">
+                  <field name="VAR" id="nri.fyFzTK~mHit{a38I">Player 0 X Speed</field>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </statement>
+      <next>
+        <block type="variables_set" id="JPCYB@=JoKa9mk_ix/z?">
+          <field name="VAR" id="nri.fyFzTK~mHit{a38I">Player 0 X Speed</field>
+          <value name="VALUE">
+            <block type="math_number" id="!2eUHI^%_~4T3IddtSq}">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <next>
+            <block type="controls_if" id="Y3Hr*Wb^/)r@x4VR$IZK">
+              <value name="IF0">
+                <block type="input_joy0_get" id="p4W(qz0l+6TJ{t1LIm:m">
+                  <field name="VAR">joy0right</field>
+                </block>
+              </value>
+              <statement name="DO0">
+                <block type="variables_set" id="!ST]-3pkqj,,[9u-S6i0">
+                  <field name="VAR" id="nri.fyFzTK~mHit{a38I">Player 0 X Speed</field>
+                  <value name="VALUE">
+                    <block type="math_number" id="!R%Pt$YQg.twF(Elk_lL">
+                      <field name="NUM">1</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+              <next>
+                <block type="controls_if" id="Y]y1nWPj[Ozf-9CC!!lF">
+                  <value name="IF0">
+                    <block type="input_joy0_get" id="CA1{EkR@:sjq!ui$YuRO">
+                      <field name="VAR">joy0left</field>
+                    </block>
+                  </value>
+                  <statement name="DO0">
+                    <block type="variables_set" id="$Y^dKoI6=,i;[.B-Jw23">
+                      <field name="VAR" id="nri.fyFzTK~mHit{a38I">Player 0 X Speed</field>
+                      <value name="VALUE">
+                        <block type="math_number" id="{yK5H~CtZ3i)-K[50qol">
+                          <field name="NUM">255</field>
+                        </block>
+                      </value>
+                    </block>
+                  </statement>
+                  <next>
+                    <block type="sprite_player0_change" id="907HTBpH{[w4JnF2Aoo;">
+                      <field name="VAR">player0x</field>
+                      <value name="DELTA">
+                        <shadow xmlns="" type="math_number">
+                          <field name="NUM">1</field>
+                        </shadow>
+                        <block type="variables_get" id="/8fSJdXAswau=0/uNZlI">
+                          <field name="VAR" id="nri.fyFzTK~mHit{a38I">Player 0 X Speed</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="controls_if" id="0,W3Xi+w5AtZC1=!%cXs">
+                          <value name="IF0">
+                            <block type="logic_operation" id="~SsT/vU~6UhSxLk,z*_6">
+                              <field name="OP">AND</field>
+                              <value name="A">
+                                <block type="input_joy0_get" id="_f$;)tD@A2zGn?bs_c$j">
+                                  <field name="VAR">joy0fire</field>
+                                </block>
+                              </value>
+                              <value name="B">
+                                <block type="logic_negate" id="fz5MqILA*$bHjlYR%/Ha">
+                                  <value name="BOOL">
+                                    <block type="collision_get" id="W_0,5*UkW7#*YR*zD?Dm">
+                                      <field name="VAR0">player0</field>
+                                      <field name="VAR1">missile0</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                            </block>
+                          </value>
+                          <statement name="DO0">
+                            <block type="sprite_missile0_set" id="6x*z5j/dbBNr1JX=1pS]">
+                              <field name="VAR">missile0x</field>
+                              <value name="VALUE">
+                                <shadow xmlns="" type="math_number">
+                                  <field name="NUM">1</field>
+                                </shadow>
+                                <block type="math_arithmetic" id="H)o_2-$^=p,_*u=BR0HM">
+                                  <field name="OP">ADD</field>
+                                  <value name="A">
+                                    <block type="sprite_player0_get" id=")lozc]qT8Y9}-_!OVKz|">
+                                      <field name="VAR">player0x</field>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <block type="math_number" id="k5DF@_YZ(aRm6L?v@[:G">
+                                      <field name="NUM">5</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="sprite_missile0_set" id="w`bADBQSW^[L6Ewxpf1]">
+                                  <field name="VAR">missile0y</field>
+                                  <value name="VALUE">
+                                    <shadow xmlns="" type="math_number">
+                                      <field name="NUM">1</field>
+                                    </shadow>
+                                    <block type="sprite_player0_get" id="A5ndFDi1IJ^F6HlN]XvO">
+                                      <field name="VAR">player0y</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="sprite_missile0_set" id="-piew~)Q#fOg*Lj]3I^^">
+                                      <field name="VAR">missile0height</field>
+                                      <value name="VALUE">
+                                        <shadow type="math_number" id="2-}U$UQCQSY10R=T$6{$">
+                                          <field name="NUM">3</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                          <next>
+                            <block type="controls_if" id="`|c$-KdY@LU@8U_CE]D5">
+                              <value name="IF0">
+                                <block type="logic_compare" id="gWDIUH.*xSjiP`]ob:+j">
+                                  <field name="OP">GT</field>
+                                  <value name="A">
+                                    <block type="sprite_missile0_get" id="2I412?Yx};YaAfo:/6`^">
+                                      <field name="VAR">missile0y</field>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <block type="math_number" id="9_OG]k-rx2bIga{_@c2f">
+                                      <field name="NUM">0</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                              <statement name="DO0">
+                                <block type="sprite_missile0_change" id="+6%a.e9,(2=0#e(ds.ah">
+                                  <field name="VAR">missile0y</field>
+                                  <value name="DELTA">
+                                    <shadow type="math_number" id="4z!t2^}Q6civ[+is}:9`">
+                                      <field name="NUM">255</field>
+                                    </shadow>
+                                  </value>
+                                </block>
+                              </statement>
+                              <next>
+                                <block type="controls_if" id="6,9{AF7QvNN~h)B9BO,}">
+                                  <value name="IF0">
+                                    <block type="logic_operation" id="MxWifINm4Plj}CxYjKt}">
+                                      <field name="OP">AND</field>
+                                      <value name="A">
+                                        <block type="variables_get" id=",UJWxD@IsFyS@pUd4ww^">
+                                          <field name="VAR" id="gre4U)RU_^j(Q#Fob*t@">Player 1 X Speed</field>
+                                        </block>
+                                      </value>
+                                      <value name="B">
+                                        <block type="collision_get" id="Ya40CNuB_Gd[=ZJW^[As">
+                                          <field name="VAR0">player1</field>
+                                          <field name="VAR1">playfield</field>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <statement name="DO0">
+                                    <block type="variables_set" id="HKKQMjuHD}l1mo_6E]fi">
+                                      <field name="VAR" id="gre4U)RU_^j(Q#Fob*t@">Player 1 X Speed</field>
+                                      <value name="VALUE">
+                                        <block type="math_single" id="](alx1DP-3k6elfbo]2Q">
+                                          <field name="OP">NEG</field>
+                                          <value name="NUM">
+                                            <block type="variables_get" id="N8a~*W|q=)s3}/!POmEL">
+                                              <field name="VAR" id="gre4U)RU_^j(Q#Fob*t@">Player 1 X Speed</field>
+                                            </block>
+                                          </value>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="sprite_player1_change" id="1)#I]ix4[Rg?OQB8GMjv">
+                                          <field name="VAR">player1x</field>
+                                          <value name="DELTA">
+                                            <shadow xmlns="" type="math_number">
+                                              <field name="NUM">1</field>
+                                            </shadow>
+                                            <block type="variables_get" id="GwAK2:{1zh0jc0bIdnJu">
+                                              <field name="VAR" id="gre4U)RU_^j(Q#Fob*t@">Player 1 X Speed</field>
+                                            </block>
+                                          </value>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                  <next>
+                                    <block type="variables_set" id="SzWwG)VEA=VVKB/@Vxkw">
+                                      <field name="VAR" id="gre4U)RU_^j(Q#Fob*t@">Player 1 X Speed</field>
+                                      <value name="VALUE">
+                                        <block type="math_number" id="R~OiE[Xa1.M@$+8p.{9U">
+                                          <field name="NUM">0</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="controls_if" id="ynkh-[xLi[[eX~rpH;]G">
+                                          <value name="IF0">
+                                            <block type="input_joy1_get" id="%0EJUX*tF@PASFGKHcpE">
+                                              <field name="VAR">joy1right</field>
+                                            </block>
+                                          </value>
+                                          <statement name="DO0">
+                                            <block type="variables_set" id="x5AIHq+5M^b,V]MLFCes">
+                                              <field name="VAR" id="gre4U)RU_^j(Q#Fob*t@">Player 1 X Speed</field>
+                                              <value name="VALUE">
+                                                <block type="math_number" id="yyfU+n@7rjT6RV@]4M,^">
+                                                  <field name="NUM">1</field>
+                                                </block>
+                                              </value>
+                                            </block>
+                                          </statement>
+                                          <next>
+                                            <block type="controls_if" id="Sw0H^*:Lm14!=*t-gAG=">
+                                              <value name="IF0">
+                                                <block type="input_joy1_get" id="@u^DGGh:nQJ|f.or8@dM">
+                                                  <field name="VAR">joy1left</field>
+                                                </block>
+                                              </value>
+                                              <statement name="DO0">
+                                                <block type="variables_set" id="u]-RruvN;SRdnB*M`G,I">
+                                                  <field name="VAR" id="gre4U)RU_^j(Q#Fob*t@">Player 1 X Speed</field>
+                                                  <value name="VALUE">
+                                                    <block type="math_number" id="M|0+(i[nKQ6NtZhR8aMg">
+                                                      <field name="NUM">255</field>
+                                                    </block>
+                                                  </value>
+                                                </block>
+                                              </statement>
+                                              <next>
+                                                <block type="sprite_player1_change" id="I6|r4p4cwP.0BTCMe-mJ">
+                                                  <field name="VAR">player1x</field>
+                                                  <value name="DELTA">
+                                                    <shadow xmlns="" type="math_number">
+                                                      <field name="NUM">1</field>
+                                                    </shadow>
+                                                    <block type="variables_get" id="s,kd@_-C[{svxg%o6bKb">
+                                                      <field name="VAR" id="gre4U)RU_^j(Q#Fob*t@">Player 1 X Speed</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="controls_if" id="w*nh?!yQ*SkxiTUdY;q#">
+                                                      <value name="IF0">
+                                                        <block type="input_joy1_get" id="IladZD/6CL9OQ3fySw!O">
+                                                          <field name="VAR">joy1fire</field>
+                                                        </block>
+                                                      </value>
+                                                      <statement name="DO0">
+                                                        <block type="sprite_missile1_set" id="a){Mp|9d2BZPcJ}JH|}i">
+                                                          <field name="VAR">missile1x</field>
+                                                          <value name="VALUE">
+                                                            <shadow xmlns="" type="math_number">
+                                                              <field name="NUM">1</field>
+                                                            </shadow>
+                                                            <block type="math_arithmetic" id="Mi?JP%NzexjSjC$]z.-2">
+                                                              <field name="OP">MINUS</field>
+                                                              <value name="A">
+                                                                <block type="sprite_player1_get" id="*A}Piu^m{WHQKQgZR@q~">
+                                                                  <field name="VAR">player1x</field>
+                                                                </block>
+                                                              </value>
+                                                              <value name="B">
+                                                                <block type="math_number" id="08#b!z`_JMFe6sBs8/w.">
+                                                                  <field name="NUM">5</field>
+                                                                </block>
+                                                              </value>
+                                                            </block>
+                                                          </value>
+                                                          <next>
+                                                            <block type="sprite_missile1_set" id=")eus,c2}ts(9,r1PbdhI">
+                                                              <field name="VAR">missile1y</field>
+                                                              <value name="VALUE">
+                                                                <shadow xmlns="" type="math_number">
+                                                                  <field name="NUM">1</field>
+                                                                </shadow>
+                                                                <block type="sprite_player1_get" id="7O$q%O}FmkZ/N;/3u1c?">
+                                                                  <field name="VAR">player1y</field>
+                                                                </block>
+                                                              </value>
+                                                              <next>
+                                                                <block type="sprite_missile1_set" id="X0PHl[]1GOVd/QNY8I*%">
+                                                                  <field name="VAR">missile1height</field>
+                                                                  <value name="VALUE">
+                                                                    <shadow type="math_number" id="ia:v3i}qA?LbTU]?FJ5;">
+                                                                      <field name="NUM">3</field>
+                                                                    </shadow>
+                                                                  </value>
+                                                                </block>
+                                                              </next>
+                                                            </block>
+                                                          </next>
+                                                        </block>
+                                                      </statement>
+                                                      <next>
+                                                        <block type="controls_if" id="wa_!Mv9~A(!z=?Zfi`Ci">
+                                                          <mutation else="1"></mutation>
+                                                          <value name="IF0">
+                                                            <block type="logic_operation" id="t,.nm$Imvk@+O}?Kh/lM">
+                                                              <field name="OP">AND</field>
+                                                              <value name="A">
+                                                                <block type="logic_compare" id="F{(Fg5IeY;:0bQLuByKG">
+                                                                  <field name="OP">GT</field>
+                                                                  <value name="A">
+                                                                    <block type="sprite_missile1_get" id=",*jT*LSkv_]qj.H33PVt">
+                                                                      <field name="VAR">missile1y</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <value name="B">
+                                                                    <block type="math_number" id="#`9%B^aJ)$}{7RZC@[xA">
+                                                                      <field name="NUM">0</field>
+                                                                    </block>
+                                                                  </value>
+                                                                </block>
+                                                              </value>
+                                                              <value name="B">
+                                                                <block type="logic_compare" id="}I[4Vl7LV]-B0!psu)nu">
+                                                                  <field name="OP">LT</field>
+                                                                  <value name="A">
+                                                                    <block type="sprite_missile1_get" id="#m?E%Xh|f7$_esHqVn_G">
+                                                                      <field name="VAR">missile1y</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <value name="B">
+                                                                    <block type="math_number" id="f8QG{b:M=;_4it;vT_0K">
+                                                                      <field name="NUM">100</field>
+                                                                    </block>
+                                                                  </value>
+                                                                </block>
+                                                              </value>
+                                                            </block>
+                                                          </value>
+                                                          <statement name="DO0">
+                                                            <block type="sprite_missile1_change" id="{]d~vE8p5[^~6rqW{ZSr">
+                                                              <field name="VAR">missile1y</field>
+                                                              <value name="DELTA">
+                                                                <shadow type="math_number" id="M@hZQZS3?kt=GOJ`(Myh">
+                                                                  <field name="NUM">1</field>
+                                                                </shadow>
+                                                              </value>
+                                                            </block>
+                                                          </statement>
+                                                          <statement name="ELSE">
+                                                            <block type="sprite_missile1_set" id="T@z%Y4nIW9r.d,uyAz2_">
+                                                              <field name="VAR">missile1height</field>
+                                                              <value name="VALUE">
+                                                                <shadow type="math_number" id="YW0[0iE6Wy4S=LfS#O+J">
+                                                                  <field name="NUM">0</field>
+                                                                </shadow>
+                                                              </value>
+                                                            </block>
+                                                          </statement>
+                                                        </block>
+                                                      </next>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
     <block type="event_block" id="$G=~B7KjIjynqnnB+v*l" x="63" y="38">
       <field name="EVENT">title_start</field>
       <statement name="DO">
@@ -44,17 +480,29 @@ blockly-workspace: >-
         <block type="event_block" id="UwP(VbzK9ejL=84XYxti">
           <field name="EVENT">title_update</field>
           <statement name="DO">
-            <block type="controls_if" id="MYZ|LZe_e.y#*`ePW/PF">
-              <value name="IF0">
-                <block type="input_joy0_get" id="p2lQ-$6tfrjTegGtMgkA">
-                  <field name="VAR">joy0fire</field>
+            <block type="score_set" id=")g0w=O%am(-ne/}ehyC_">
+              <value name="VALUE">
+                <shadow type="math_number" id="E?;?:jX^SRQpAfpF]tvv">
+                  <field name="NUM">1</field>
+                </shadow>
+                <block type="color_get" id="hw0V=fkU_X4+y]uUrJa-">
+                  <field name="COLOR">0</field>
                 </block>
               </value>
-              <statement name="DO0">
-                <block type="event_change_state" id="I7}a!bWv=4N%JF9wFTY:">
-                  <field name="STATE">gameplay</field>
+              <next>
+                <block type="controls_if" id="MYZ|LZe_e.y#*`ePW/PF">
+                  <value name="IF0">
+                    <block type="input_joy0_get" id="p2lQ-$6tfrjTegGtMgkA">
+                      <field name="VAR">joy0fire</field>
+                    </block>
+                  </value>
+                  <statement name="DO0">
+                    <block type="event_change_state" id="I7}a!bWv=4N%JF9wFTY:">
+                      <field name="STATE">gameplay</field>
+                    </block>
+                  </statement>
                 </block>
-              </statement>
+              </next>
             </block>
           </statement>
           <next>
@@ -100,7 +548,7 @@ blockly-workspace: >-
                 </block>
               </statement>
               <next>
-                <block type="sprite_player0_change" id="duUKRHkD/N+oG$uH/aPk">
+                <block type="sprite_player0_change" id="duUKRHkD/N+oG$uH/aPk" disabled="true">
                   <field name="VAR">player0x</field>
                   <value name="DELTA">
                     <shadow type="math_number" id="g41mnbcgtyP}zpk0rCW7">
@@ -108,7 +556,7 @@ blockly-workspace: >-
                     </shadow>
                   </value>
                   <next>
-                    <block type="sprite_player1_change" id="@YDU(@)WcRfKY.h7DG4.">
+                    <block type="sprite_player1_change" id="@YDU(@)WcRfKY.h7DG4." disabled="true">
                       <field name="VAR">player1x</field>
                       <value name="DELTA">
                         <shadow type="math_number" id="q8lch|mtzi8Ama=s}_F$">
@@ -123,6 +571,150 @@ blockly-workspace: >-
           </next>
         </block>
       </next>
+    </block>
+    <block type="controls_if" id="{obI2D:Tpk4cRSxTG@}V" x="1338" y="113">
+      <value name="IF0">
+        <block type="collision_get" id=")CoQ^Q*;eh%b@lusq4{}">
+          <field name="VAR0">missile0</field>
+          <field name="VAR1">player1</field>
+        </block>
+      </value>
+      <statement name="DO0">
+        <block type="simple_sound_set" id="I,*ePNtm24{}k;RKd2)7">
+          <field name="AUDC">2</field>
+          <field name="AUDF">31</field>
+          <field name="AUDV">15</field>
+          <field name="DURATION">20</field>
+          <field name="CHANNEL">0</field>
+          <next>
+            <block type="sprite_missile0_set" id="(qO~`NA@HuF}hX~2]vO!">
+              <field name="VAR">missile0height</field>
+              <value name="VALUE">
+                <shadow type="math_number" id="*tzAr/r/`vg#~jI{S^]+">
+                  <field name="NUM">0</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="math_change" id="]%|O)cu$hTOP*qAcI(Iy">
+                  <field name="VAR" id="hU}_MbQ_na-lzK{Fd/~_">player0_score</field>
+                  <value name="DELTA">
+                    <shadow type="math_number" id="ZoiW{Ljy;K|Kn1ge4f|u">
+                      <field name="NUM">1</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="controls_if" id="O{jprgt`.!WOLSmMn=?J" x="1338" y="263">
+      <value name="IF0">
+        <block type="collision_get" id=":ANGXqL@|quP?4^=VzUT">
+          <field name="VAR0">missile1</field>
+          <field name="VAR1">player0</field>
+        </block>
+      </value>
+      <statement name="DO0">
+        <block type="simple_sound_set" id="!@.z_V(k+VS%sm,-6RKX">
+          <field name="AUDC">2</field>
+          <field name="AUDF">31</field>
+          <field name="AUDV">15</field>
+          <field name="DURATION">20</field>
+          <field name="CHANNEL">0</field>
+          <next>
+            <block type="sprite_missile0_set" id="SUs$y{/1jyUZ`#g}jQpG">
+              <field name="VAR">missile0height</field>
+              <value name="VALUE">
+                <shadow type="math_number" id="HO6qp`DbT5*BY~{a7;nn">
+                  <field name="NUM">0</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="math_change" id="~UDLQVfk)XHYu*=+U!^s">
+                  <field name="VAR" id="e{s[s(+6qW.T(tS2;QjL">player1_score</field>
+                  <value name="DELTA">
+                    <shadow type="math_number" id="-hb0w-Kj`Q#zp-|@NfJ2">
+                      <field name="NUM">1</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="controls_if" id="XU%d%-jG_4B1DX!k=!@3" x="1713" y="438">
+      <value name="IF0">
+        <block type="logic_compare" id="5OZF=!$^rKt?gpx}e~0?">
+          <field name="OP">EQ</field>
+          <value name="A">
+            <block type="variables_get" id="LS!,EBOr]^X=hu6peL0i">
+              <field name="VAR" id="e{s[s(+6qW.T(tS2;QjL">player1_score</field>
+            </block>
+          </value>
+          <value name="B">
+            <block type="math_number" id="h5#?*PFg_ry[$b:,3q_j">
+              <field name="NUM">12</field>
+            </block>
+          </value>
+        </block>
+      </value>
+      <statement name="DO0">
+        <block type="background_set_select" id="MU}VO@f.w($wU)?2UCX4">
+          <field name="VAR">4</field>
+          <next>
+            <block type="background_set_color" id="=KzY=^7!1VVgaO^Pp}6r">
+              <field name="VAR">COLUBK</field>
+              <value name="VALUE">
+                <shadow type="math_number">
+                  <field name="NUM">20</field>
+                </shadow>
+                <block type="color_get" id="+LI7I:u{%_%}rk3)65-B">
+                  <field name="COLOR">148</field>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="controls_if" id=";-Kt(-vT8-P$k,FGwn.R" x="1138" y="513">
+      <value name="IF0">
+        <block type="logic_compare" id="gY7WRC|s:*Y}r;9,oSq~">
+          <field name="OP">EQ</field>
+          <value name="A">
+            <block type="variables_get" id="/o]:QOf*${8Xrh(ux=Ed">
+              <field name="VAR" id="hU}_MbQ_na-lzK{Fd/~_">player0_score</field>
+            </block>
+          </value>
+          <value name="B">
+            <block type="math_number" id="CxX,qF;`5AnZM5R{K5AX">
+              <field name="NUM">12</field>
+            </block>
+          </value>
+        </block>
+      </value>
+      <statement name="DO0">
+        <block type="background_set_select" id="_y]_$=/AqmlyV~^Cj_ZA">
+          <field name="VAR">3</field>
+          <next>
+            <block type="background_set_color" id="V4~gxZL~t:lX!6U:oa8s">
+              <field name="VAR">COLUBK</field>
+              <value name="VALUE">
+                <shadow type="math_number" id="$~-5ucu01gXXDd9!n9|O">
+                  <field name="NUM">20</field>
+                </shadow>
+                <block type="color_get" id="g+8qJaeqZ;;dJln*7ir@">
+                  <field name="COLOR">68</field>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </statement>
     </block>
   </xml>
 player-0: null
@@ -162,29 +754,29 @@ backgrounds:
       pixels: |-
         ................................
         ................................
+        ......XXX....XXX...XXX..........
+        ......X..X..X...X..X..X.........
+        ......XXX...XXXX...X...X........
+        ......X..X..X......X..X.........
+        ......X..X...XXX...XXX..........
         ................................
-        ................................
-        ................................
-        ................................
-        ................................
-        ................................
-        ................................
-        ................................
-        ................................
+        .......X.....X..XXX..XX..X......
+        ........X.X.X....X...X.X.X......
+        .........X.X....XXX..X..XX......
     - id: 4
       name: end player two
       pixels: |-
         ................................
         ................................
+        ...XXX...X.....X...X...XXXX.....
+        ...X..X..X.....X...X..X....X....
+        ...XXX...X.....X...X..XXXXX.....
+        ...X..X..X.....X...X..X.........
+        ...XXX...XXXX...XXX....XXXX.....
         ................................
-        ................................
-        ................................
-        ................................
-        ................................
-        ................................
-        ................................
-        ................................
-        ................................
+        .......X.....X..XXX..XX..X......
+        ........X.X.X....X...X.X.X......
+        .........X.X....XXX..X..XX......
     - id: 5
       name: bkg 2
       pixels: |-
